@@ -1,4 +1,4 @@
-
+package com.ListaSimple.app.ListaSimple_app;
 
 public class ListaSinFicticeo{
 	
@@ -8,7 +8,7 @@ public class ListaSinFicticeo{
 	}
 
 	Nodo ini;
-	int tamaño;
+	int tamano;
 	
 	public void add(int pos, Object o){
 		Nodo nuevo=new Nodo();
@@ -18,7 +18,7 @@ public class ListaSinFicticeo{
 			nuevo.sig=ini;
 			ini=nuevo;
 		}
-		else if(pos>0 && pos<=tamaño) {
+		else if(pos>0 && pos<=tamano) {
 			anterior=ini;
 			while(pos!=1) {
 				pos--;
@@ -29,7 +29,7 @@ public class ListaSinFicticeo{
 		}
 		else
 			throw new RuntimeException("posicion excedida en la lista.");
-		tamaño++;
+		tamano++;
 	}
 
 
@@ -41,9 +41,9 @@ public class ListaSinFicticeo{
 		Object aux;
 		Nodo anterior;
 
-		if(tamaño==0)
+		if(tamano==0)
 			throw new RuntimeException("la lista esta vacia.");
-		if(pos<0 || pos>=tamaño)
+		if(pos<0 || pos>=tamano)
 			throw new RuntimeException("posicion excedida en la lista.");
 
 		if(pos==0) {
@@ -59,12 +59,12 @@ public class ListaSinFicticeo{
 			aux=anterior.sig.dato;
 			anterior.sig=anterior.sig.sig;
 		}
-		tamaño--;
+		tamano--;
 		return aux;
 	}
 
 	public int size(){
-		return tamaño;		
+		return tamano;		
 	}
 	
 	public String toString() {
